@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section class="content">
+  <div class="main-header"><h2>Home</h2></div>
+  <section class="core_form">
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Name" required />
+      <textarea name="body" placeholder="Tell us anything" required></textarea>
+      <input type="file" id="file" name="image" />
+      <input type="submit" value="Tweet" />
+    </form>
+  </section>
+  <section class="cores">
+    <ul>
+      {% for core in cores %}
+
+      <li>
+        <img
+          class="menu_icon js-menu-icon"
+          src="{% static 'img\option.png' %}"
+        />
+        <div class="menu">
+          <a href="/delete/{{ core.id }}/">Delete</a>
+          <a href="/edit/{{ core.id }}/">Edit</a>
+        </div>
+        <div class="logo">
+          <img src="{%static 'img/user.png' %}" alt="" />
+        </div>
+        <div class="name_body">
+          <div class="name">{{ core.name }}</div>
+          <div class="datetime">{{ core.created_at }}</div>
+          <p>{{ core.body }}</p>
+          {% if core.image.url %}
+          <img src="{{core.image.url}}" class="Photo" alt="" />
+          {% endif %}
+
+          <form action="{% url 'like_post' core.id %}" method="POST">
+            {% csrf_token %}
+            <button
+              class="Love"
+              type="submit"
+              ,
+              name="core_id"
+              ,
+              value="{{core.id}}"
+            >
+              &#10084;
+            </button>
+            {{core.likes}}
+          </form>
+        </div>
+      </li>
+
+      {% endfor %}
+    </ul>
+  </section>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="{% static 'js/script.js' %}"></script>
+</section>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+/* 
+Common
+***************************/
+html, 
+body {
+    HEIGHT: FIT-CONTENT;
+    
+}
+
+.content {
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+/*
+Post
+***************************/
+.core_form {
+    padding: 20px 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.core_form input {
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.core_form text area {
+    width: 70%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.cores li .menu_icon {
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.cores li .menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 11px;
+    border-radius: 3px;
+}
+
+.cores li .menu a {
+    text-decoration: none;
+}
+
+.cores ul {
+    padding: 17px;
+}
+
+.cores li {
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 40px;
+    list-style: none;
+}
+
+.cores li .logo {
+    flex-basis: 15%;
+}
+
+.cores li .logo img {
+    width: 60%;
+}
+
+.cores li .name_body {
+    flex-basis: 85%;
+}
+
+.cores li .name_body .name {
+    font-weight: bold;
+}
+
+.cores li .name_body .datetime {
+    color: gray;
+}
+
+@media  screen and (max-width: 500px) {
+    .cores li .name_body .name {
+        font-size: 40px;
+    }
+}
+img.Photo {
+    width: 100%;
+}
+
+textarea {
+    WIDTH: 74%;
+    height: 20vh;
+}
+
+
+
+.main-header {
+    font-size: 2vw;
+    font-weight: 700;
+    /* margin-left: 6%; */
+    border-bottom: 1px solid black;
+}
+h2 {
+    font-size: 2vw;
+    margin-left: 6%;
+}
+a.cancel {
+    width: 21%;
+    border: 1px solid black;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
